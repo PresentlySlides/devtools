@@ -21,6 +21,7 @@ window.onload = () => {
 };
 
 document.getElementById("reload").addEventListener("click", () => {
+    document.getElementById("reload").disabled = true;
     location.reload();
 });
 

@@ -2,3 +2,142 @@
 #failed {
     display: none;
 }
+
+* {
+    font-family: ui-monospace, "Courier New", Courier, "Lucida Console", Monaco, monospace !important;
+}
+
+body {
+    background: #1e1e1e;
+    color: white;
+    margin: 16px;
+}
+
+h1 {
+    text-align: center;
+    height: 100px;
+    background-color: #422f81;
+    font-size: 50px;
+    line-height: 100px;
+    margin: -16px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    margin-top: 24px;
+    border-bottom: 2px solid #422f81;
+    padding-bottom: 4px;
+    font-weight: bold;
+}
+
+#reload {
+    height: 32px;
+    width: 220px;
+    font-size: 16px;
+    line-height: 32px;
+    background: linear-gradient(90deg, #6a5acd 0%, #80d0f5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(66, 47, 129, 0.2);
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#reload:hover {
+    background: linear-gradient(-90deg, #6a5acd 0%, #80d0f5 100%);
+}
+
+#reload:disabled {
+    background: rgb(173, 173, 173);
+    cursor: not-allowed;
+}
+
+#logs {
+    white-space: pre-wrap;
+    word-break: break-word;
+    background: #252526;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    max-height: 400px;
+    overflow-y: auto;
+    color: #c2c2c2;
+    font-style: italic;
+}
+
+input {
+    background: #252526;
+    color: #fff;
+    border: 1.5px solid #422f81;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 16px;
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: calc(100% - 32px);
+    margin-top: 4px;
+    display: block;
+}
+
+input:focus {
+    border-color: #80d0f5;
+    box-shadow: 0 0 4px #80d0f5;
+}
+
+#urlactions {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+button:not(#reload) {
+    background-color: #422f81;
+    color: #fff;
+    border: 1.5px solid #6a5acd;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 17px;
+    margin-bottom: 14px;
+    outline: none;
+    transition: background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(66, 47, 129, 0.12);
+    cursor: pointer;
+}
+
+button:not(#reload):hover {
+    background-color: #6a5acd;
+    border-color: #80d0f5;
+    box-shadow: 0 4px 12px rgba(128, 208, 245, 0.18);
+}
+
+button:not(#reload):disabled {
+    background: #adadad;
+    border-color: #c8c8c8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#connect {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    margin-right: -4px !important;
+}
+
+#as {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    margin-left: -4px !important;
+}
+
+p {
+    margin-bottom: 8px;
+}
