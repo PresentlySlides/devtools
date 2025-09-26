@@ -92,6 +92,12 @@ input:focus {
     box-shadow: 0 0 4px #80d0f5;
 }
 
+input:disabled {
+    background: #3c3c3c;
+    border-color: #5a5a5a;
+    color: #a0a0a0;
+}
+
 #urlactions {
     margin: 0 auto;
     width: fit-content;

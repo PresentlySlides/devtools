@@ -27,7 +27,9 @@ document.getElementById("reload").addEventListener("click", () => {
 
 document.getElementById("cancel").addEventListener("click", () => {
     document.getElementById("failed").style.display = "none";
+    document.getElementById("url").disabled = false;
     document.getElementById("connect").disabled = false;
+    document.getElementById("as").disabled = false;
 });
 
 document.getElementById("continue").addEventListener("click", () => {
@@ -37,8 +39,9 @@ document.getElementById("continue").addEventListener("click", () => {
 });
 
 document.getElementById("connect").addEventListener("click", () => {
-    document.getElementById("url").contentEditable = false;
+    document.getElementById("url").disabled = true;
     document.getElementById("connect").disabled = true;
+    document.getElementById("as").disabled = true;
     const url = document.getElementById("url").value;
     message(`Connecting to ${url}...`);
     fetch(url, {method: "GET"})
@@ -79,7 +82,9 @@ function connect(url, namespace) {
 
     document.getElementById("disconnect").addEventListener("click", () => {
         socket.disconnect();
+        document.getElementById("url").disabled = false;
         document.getElementById("connect").disabled = false;
+        document.getElementById("as").disabled = false;
     });
 
     return socket;
