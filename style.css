@@ -156,3 +156,24 @@ button:not(#reload):disabled {
 p {
     margin-bottom: 8px;
 }
+
+ul,
+ol {
+    border-left: 3px solid #422f81;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+li {
+    margin-left: 20px;
+    line-height: 1.7;
+    list-style-position: inside;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+ol li {
+    list-style-type: decimal;
+}

@@ -13,24 +13,42 @@
         <h1>Presently Devtools</h1>
         <button id="reload" type="button">Reload Devtools</button>
         <p id="logs"></p>
+
         <h2>Connect to Websocket</h2>
         <label for="url">Enter a URL:</label>
         <input type="url" id="url" />
+
         <div id="urlactions">
             <button id="connect" type="button">Connect</button>
             <button id="as" type="button">as user</button>
             <button id="remember" type="button">Remember URL</button>
         </div>
+
         <div id="connection">
             <h2>Manage Connection</h2>
             <button id="disconnect" type="button">Disconnect</button>
         </div>
+
         <div id="failed">
             <h2>Couldn't verify URL</h2>
             <p>
-                Couldn't verify that the provided URL is a Presently server. You can continue, but
-                things may not work.
+                The URL you entered is either using an unsupported protocol version or is not
+                running Presently.
             </p>
+            <ol>
+                <li>Make sure you entered the URL correctly</li>
+                <li>Make sure the server at the URL is running Presently</li>
+                <li>
+                    Make sure the server is using protocol version
+                    <span id="protocolVersion"></span>.
+                </li>
+            </ol>
+
+            <p>
+                If all of the above are correct, you may click continue, but expect bugs, errors,
+                and/or missing features.
+            </p>
+
             <button id="continue" type="button">Continue</button>
             <button id="cancel" type="button">Cancel</button>
         </div>
