@@ -1,3 +1,5 @@
+const protocolVersion = 1; // DO NOT CHANGE UNLESS YOU KNOW WHAT YOU'RE DOING
+
 const clientTypes = ["user"];
 let currentClientType = 0;
 
@@ -48,10 +50,13 @@ document.getElementById("connect").addEventListener("click", () => {
         .then(response => {
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-            return response.text();
+            return response.json();
         })
-        .then(text => {
-            if (text != "presentlyslides") throw new Error("Not a PresentlySlides server.");
+        .then(json => {
+            if (json.protocolVersion != protocolVersion)
+                throw new Error(`Incompatible protocol version.`);
+            else if (json.running != "PresentlySlides")
+                throw new Error("Not a PresentlySlides server.");
             connect(url, `/${clientTypes[currentClientType]}`);
         })
         .catch(err => {
