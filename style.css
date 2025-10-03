@@ -1,5 +1,6 @@
 #connection,
-#failed {
+#failed,
+#room {
     display: none;
 }
 
@@ -91,8 +92,10 @@ input {
     margin-bottom: 12px;
     outline: none;
     transition: border-color 0.2s;
+}
+
+#url {
     width: calc(100% - 32px);
-    margin-top: 4px;
     display: block;
 }
 

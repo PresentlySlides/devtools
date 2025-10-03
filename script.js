@@ -92,6 +92,35 @@ function connect(url, namespace) {
         document.getElementById("as").disabled = false;
     });
 
+    document.getElementById("createRoom").addEventListener("click", () => {
+        socket.emit("create room", response => {
+            message(`Created room with ID ${response.roomId}`);
+            document.getElementById("roomIdDisplay").innerText = response.roomId;
+            document.getElementById("room").style.display = "block";
+        });
+    });
+
+    document.getElementById("joinRoom").addEventListener("click", () => {
+        const roomId = document.getElementById("roomId").value;
+
+        socket.emit("join room", {roomId}, response => {
+            if (response.success) {
+                message(`Joined room with ID ${roomId}`);
+                document.getElementById("roomIdDisplay").innerText = roomId;
+                document.getElementById("room").style.display = "block";
+            } else message(`Failed to join room: ${response.error}`);
+        });
+    });
+
+    document.getElementById("leaveRoom").addEventListener("click", () => {
+        socket.emit("leave room", response => {
+            if (response.success) {
+                message(`Left room`);
+                document.getElementById("room").style.display = "none";
+            } else message(`Failed to leave room: ${response.error}`);
+        });
+    });
+
     return socket;
 }
 

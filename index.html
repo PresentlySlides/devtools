@@ -26,7 +26,16 @@
 
         <div id="connection">
             <h2>Manage Connection</h2>
+            <input type="text" id="roomId" placeholder="Room ID or Name" />
             <button id="disconnect" type="button">Disconnect</button>
+            <button id="joinRoom" type="button">Join Room</button>
+            <button id="createRoom" type="button">Create Room</button>
+
+            <div id="room">
+                <h2>Manage Room</h2>
+                <p>Room ID: <span id="roomIdDisplay"></span></p>
+                <button id="leaveRoom" type="button">Leave Room</button>
+            </div>
         </div>
 
         <div id="failed">
